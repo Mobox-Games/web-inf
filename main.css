@@ -1,0 +1,89 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Основной шрифт */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Темный фон по умолчанию */
+    color: #FFD700; /* Желтый текст по умолчанию */
+}
+
+header {
+    background: #000; /* Черный фон */
+    color: #FFD700; /* Желтый текст */
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Roboto', sans-serif; /* Строгий шрифт для заголовка */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #FFD700; /* Желтый текст для ссылок */
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Стили для галереи фото */
+.photo-gallery {
+   display: flex;
+   flex-wrap: wrap; /* Позволяет обернуть изображения на новую строку */
+   justify-content: space-between; /* Распределяет пространство между изображениями */
+}
+
+.photo-item {
+   width: calc(50% - 10px); /* Ширина каждого изображения (по 2 в ряд) с учетом отступов */
+   margin-bottom: 20px; /* Отступ снизу */
+   transition: transform 0.3s ease; /* Плавный переход при изменении размера */
+   user-select: none; /* Запрет выделения текста */
+   -webkit-user-drag: none; /* Запрет перетаскивания изображений в WebKit-браузерах */
+}
+
+section {
+   margin-bottom: 20px;
+}
+
+/* Анимация при прокрутке */
+section {
+   opacity: 0;
+   transform: translateY(20px);
+   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+section.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+footer {
+   text-align: center;
+   padding: 10px 0;
+   background: #000; /* Черный фон для подвала */
+}
+
+/* Темная тема - убираем, так как фон уже установлен выше */
+body.dark-mode {
+   background-color: #121212; /* Темный фон для dark-mode, если используется класс dark-mode */
+}
+
+header.dark-mode {
+   background-color: #000; /* Черный фон шапки для dark-mode */
+}
+
+header.dark-mode h1,
+header.dark-mode nav a {
+   color: #FFD700; /* Желтый текст в темной теме */
+}
